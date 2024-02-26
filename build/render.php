@@ -26,7 +26,7 @@ $query = new WP_Query([
 				</div>
 				<div class="flip-card-back" style="background-color: <?= $attributes['cardColor'] ?>">
 					<h3 class="name" style="color: <?= $attributes['headingColor'] ?>"><?= get_the_title()?></h3>
-					<div class="position" style="color: <?= $attributes['textColor'] ?>"><?=get_post_meta(get_the_ID(), 'wctc_ep-technology-used', true)?></div>
+					<div class="position" style="color: <?= $attributes['textColor'] ?>"><?=get_post_meta(get_the_ID(), 'wctc_ep_technology_used', true)?></div>
 					<div class="bio" style="color: <?= $attributes['textColor'] ?>">
 						<p><?= get_the_content() ?></p>
 					</div>
