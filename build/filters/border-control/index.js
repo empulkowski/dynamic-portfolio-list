@@ -73,7 +73,7 @@ function blockWrapper(WrappedBlock) {
         onChange: value => setAttributes({
           borderPadding: parseInt(value)
         })
-      }), " px"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.PanelColorSettings, {
+      }), " px"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.PanelColorSettings, {
         title: "Colors",
         colorSettings: [{
           label: "Border Color",
@@ -82,7 +82,7 @@ function blockWrapper(WrappedBlock) {
             borderColor
           })
         }]
-      })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
+      }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
         label: "Border Width",
         value: attributes.borderWidth,
         onChange: value => setAttributes({

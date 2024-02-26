@@ -47,7 +47,6 @@ function blockWrapper(WrappedBlock) {
 								/> px
 							</PanelRow>
 
-							<PanelRow>
 								<PanelColorSettings
 									title="Colors"
 									colorSettings={[
@@ -58,7 +57,7 @@ function blockWrapper(WrappedBlock) {
 										},
 									]}
 								/>
-							</PanelRow>
+
 
 							<RangeControl
 								label="Border Width"
