@@ -40,9 +40,10 @@ function blockWrapper(WrappedBlock) {
       } = this.props;
       let divStyles = {
         borderStyle: attributes.borderStyle || 'none',
-        borderWidth: '2px',
-        borderColor: 'black',
-        padding: '10px'
+        borderWidth: attributes.borderWidth = 'px',
+        borderRadius: attributes.borderRadius = 'px',
+        borderColor: attributes.borderColor,
+        padding: attributes.borderPadding + 'px'
       };
       return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
         title: "Border Controls",
@@ -66,7 +67,38 @@ function blockWrapper(WrappedBlock) {
           label: 'Dotted',
           value: 'dotted'
         }]
-      })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+        label: "padding",
+        value: attributes.borderPadding,
+        onChange: value => setAttributes({
+          borderPadding: parseInt(value)
+        })
+      }), " px"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.PanelColorSettings, {
+        title: "Colors",
+        colorSettings: [{
+          label: "Border Color",
+          value: attributes.borderColor,
+          onChange: borderColor => setAttributes({
+            borderColor
+          })
+        }]
+      })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
+        label: "Border Width",
+        value: attributes.borderWidth,
+        onChange: value => setAttributes({
+          borderWidth: parseInt(value)
+        }),
+        min: 0.5,
+        max: 5
+      }), " px", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
+        label: "Border Radius",
+        value: attributes.borderRadius,
+        onChange: value => setAttributes({
+          borderRadius: parseInt(value)
+        }),
+        min: 0,
+        max: 10
+      }), " px")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
         className: "wp-block",
         style: divStyles
       }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(WrappedBlock, {
@@ -82,7 +114,7 @@ function blockWrapper(WrappedBlock) {
 const borderComponent = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createHigherOrderComponent)(blockWrapper, 'border-control');
 
 // register our filter with WordPress
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_5__.addFilter)('editor.BlockEdit', 'your-plugin-name/border-control/block-wrapper', borderComponent);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_5__.addFilter)('editor.BlockEdit', 'ep/border-control/block-wrapper', borderComponent);
 
 /***/ }),
 
@@ -105,12 +137,31 @@ function addBorderAttributes(settings, name) {
     type: 'string',
     default: ''
   };
-
+  settings.attributes.borderPadding = {
+    type: 'number',
+    default: 10
+  };
+  settings.attributes.borderWidth = {
+    type: 'number',
+    default: 1
+  };
+  settings.attributes.borderRadius = {
+    type: 'number',
+    default: 1
+  };
+  settings.attributes.borderRadius = {
+    type: 'number',
+    default: 1
+  };
+  settings.attributes.borderColor = {
+    type: 'string',
+    default: ''
+  };
   // (modify any additional settings)
 
   return settings;
 }
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('blocks.registerBlockType', 'your-plugin-name/border-control/add-border-attributes', addBorderAttributes);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('blocks.registerBlockType', 'ep/border-control/add-border-attributes', addBorderAttributes);
 
 /***/ }),
 

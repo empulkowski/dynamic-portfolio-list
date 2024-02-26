@@ -45,6 +45,12 @@ class BlockSettings extends (react__WEBPACK_IMPORTED_MODULE_0___default().Compon
         onChange: textColor => setAttributes({
           textColor
         })
+      }, {
+        label: "Padding",
+        value: attributes.paddingSize,
+        onChange: paddingSiz => setAttributes({
+          paddingSize
+        })
       }]
     }));
   }
@@ -266,7 +272,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ep/portfolio-list","version":"0.1.0","title":"Dynamic Portfolio List","category":"design","icon":"id","description":"Portfolio Projects","example":{},"supports":{"html":false},"textdomain":"portfolio-list","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"cardColor":{"type":"string"},"headingColor":{"type":"string"},"textColor":{"type":"string"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ep/portfolio-list","version":"0.1.0","title":"Dynamic Portfolio List","category":"design","icon":"id","description":"Portfolio Projects","example":{},"supports":{"html":false},"textdomain":"portfolio-list","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScript":"file:./view.js","attributes":{"cardColor":{"type":"string"},"headingColor":{"type":"string"},"textColor":{"type":"string"},"paddingSize":{"type":"number"}}}');
 
 /***/ })
 

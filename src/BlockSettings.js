@@ -28,6 +28,12 @@ export class BlockSettings extends React.Component {
 							onChange: textColor => setAttributes({textColor})
 						},
 
+						{
+							label: "Padding",
+							value: attributes.paddingSize,
+							onChange: paddingSiz => setAttributes({paddingSize})
+						}
+
 					]}
 				/>
 			</InspectorControls>

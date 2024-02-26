@@ -16,5 +16,5 @@ function addBorderDiv(element, blockType, attributes) {
 	return (<div className="border-control" style={divStyles}>{element}</div>);
 }
 
-addFilter('blocks.getSaveElement', 'your-plugin-name/border-control/add-border-element', addBorderDiv);
+addFilter('blocks.getSaveElement', 'ep/border-control/add-border-element', addBorderDiv);
 

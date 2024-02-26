@@ -26,6 +26,9 @@
 		},
 		"textColor" : {
 			"type": "string"
+		},
+		"paddingSize" : {
+			"type": "number"
 		}
 	}
 }
