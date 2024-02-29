@@ -126,9 +126,7 @@ function Edit({
     attributes: attributes,
     setAttributes: setAttributes
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_5___default()), {
-    block: _block_json__WEBPACK_IMPORTED_MODULE_6__.name,
-    skipBlockSupportAttributes: true,
-    attributes: attributes
+    block: _block_json__WEBPACK_IMPORTED_MODULE_6__.name
   }));
 }
 

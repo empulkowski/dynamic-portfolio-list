@@ -14,8 +14,8 @@ function blockWrapper(WrappedBlock) {
 
 			let divStyles = {
 				borderStyle: attributes.borderStyle || 'none',
-				borderWidth: attributes.borderWidth = 'px',
-				borderRadius: attributes.borderRadius ='px',
+				borderWidth: attributes.borderWidth + 'px',
+				borderRadius: attributes.borderRadius + 'px',
 				borderColor: attributes.borderColor,
 				padding: attributes.borderPadding + 'px',
 			}

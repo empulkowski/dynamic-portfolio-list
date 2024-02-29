@@ -40,27 +40,9 @@ export default function Edit({attributes, setAttributes}) {
 	return (
 		<div { ...useBlockProps() }>
 			<BlockSettings attributes={attributes} setAttributes={setAttributes} />
-		{/*	<div className="flip-card">*/}
-		{/*		<div className="flip-card-inner">*/}
-		{/*			<div className="flip-card-front">*/}
-		{/*				<img src="https://2.gravatar.com/avatar/ea8b076b398ee48b71cfaecf898c582b?s=250&d=mm&r=g" />*/}
-		{/*			</div>*/}
-		{/*			<div className="flip-card-back" style={{backgroundColor: attributes.cardColor}}>*/}
-		{/*				<h3 className="name" style={{color: attributes.headingColor}}>Red Forman</h3>*/}
-		{/*				<div className="position" style={{color: attributes.textColor}}>Manager</div>*/}
-		{/*				<div className="bio" style={{color: attributes.textColor}}>*/}
-		{/*					<p>If I Was A Bird, I’d Fly Into A Ceiling Fan.</p>*/}
-		{/*				</div>*/}
-		{/*			</div>*/}
-		{/*		</div>*/}
-		{/*	</div>*/}
-
-		{/*</div>*/}
 
 			<ServerSideRender
 				block={ metadata.name }
-				skipBlockSupportAttributes
-				attributes={ attributes }
 			/>
 		</div>
 	);

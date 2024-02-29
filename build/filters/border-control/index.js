@@ -40,8 +40,8 @@ function blockWrapper(WrappedBlock) {
       } = this.props;
       let divStyles = {
         borderStyle: attributes.borderStyle || 'none',
-        borderWidth: attributes.borderWidth = 'px',
-        borderRadius: attributes.borderRadius = 'px',
+        borderWidth: attributes.borderWidth + 'px',
+        borderRadius: attributes.borderRadius + 'px',
         borderColor: attributes.borderColor,
         padding: attributes.borderPadding + 'px'
       };
