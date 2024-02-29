@@ -76,6 +76,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 /* harmony import */ var _BlockSettings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BlockSettings */ "./src/BlockSettings.js");
+/* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/server-side-render */ "@wordpress/server-side-render");
+/* harmony import */ var _wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/block.json");
 
 /**
  * Retrieves the translation of text.
@@ -100,37 +103,33 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+
+/**
+
+The edit function describes the structure of your block in the context of the
+editor. This represents what the editor will render when the block is used.
+ *
+@see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+
+@return {Element} Element to render.
+ */
+
+
 function Edit({
   attributes,
   setAttributes
 }) {
-  attributes.projectLink = undefined;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BlockSettings__WEBPACK_IMPORTED_MODULE_4__.BlockSettings, {
     attributes: attributes,
     setAttributes: setAttributes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "project-list"
-  }, attributes.projects.map((project, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "project",
-    key: index
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "project-image"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: project.imageURL,
-    alt: project.projectName
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "project-details"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "project-name"
-  }, project.projectName), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "technology-used"
-  }, project.technologyUsed), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "project-description"
-  }, project.projectDescription), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "project-link"
-  }, project.projectLink))))));
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_5___default()), {
+    block: _block_json__WEBPACK_IMPORTED_MODULE_6__.name,
+    skipBlockSupportAttributes: true,
+    attributes: attributes
+  }));
 }
 
 /***/ }),
@@ -244,6 +243,16 @@ module.exports = window["wp"]["blocks"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["i18n"];
+
+/***/ }),
+
+/***/ "@wordpress/server-side-render":
+/*!******************************************!*\
+  !*** external ["wp","serverSideRender"] ***!
+  \******************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["serverSideRender"];
 
 /***/ }),
 

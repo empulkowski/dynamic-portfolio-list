@@ -22,26 +22,46 @@ import { useBlockProps } from '@wordpress/block-editor';
 import './editor.scss';
 import {BlockSettings} from "./BlockSettings";
 
-export default function Edit({ attributes, setAttributes }) {
-	attributes.projectLink = undefined;
+
+
+/**
+
+The edit function describes the structure of your block in the context of the
+editor. This represents what the editor will render when the block is used.
+ *
+@see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+
+@return {Element} Element to render.
+ */
+import ServerSideRender from '@wordpress/server-side-render';
+import metadata from './block.json';
+export default function Edit({attributes, setAttributes}) {
 	return (
-		<div {...useBlockProps()}>
+		<div { ...useBlockProps() }>
 			<BlockSettings attributes={attributes} setAttributes={setAttributes} />
-			<div className="project-list">
-				{attributes.projects.map((project, index) => (
-					<div className="project" key={index}>
-						<div className="project-image">
-							<img src={project.imageURL} alt={project.projectName} />
-						</div>
-						<div className="project-details">
-							<h3 className="project-name">{project.projectName}</h3>
-							<div className="technology-used">{project.technologyUsed}</div>
-							<p className="project-description">{project.projectDescription}</p>
-							<div className="project-link">{project.projectLink}</div>
-						</div>
-					</div>
-				))}
-			</div>
+		{/*	<div className="flip-card">*/}
+		{/*		<div className="flip-card-inner">*/}
+		{/*			<div className="flip-card-front">*/}
+		{/*				<img src="https://2.gravatar.com/avatar/ea8b076b398ee48b71cfaecf898c582b?s=250&d=mm&r=g" />*/}
+		{/*			</div>*/}
+		{/*			<div className="flip-card-back" style={{backgroundColor: attributes.cardColor}}>*/}
+		{/*				<h3 className="name" style={{color: attributes.headingColor}}>Red Forman</h3>*/}
+		{/*				<div className="position" style={{color: attributes.textColor}}>Manager</div>*/}
+		{/*				<div className="bio" style={{color: attributes.textColor}}>*/}
+		{/*					<p>If I Was A Bird, I’d Fly Into A Ceiling Fan.</p>*/}
+		{/*				</div>*/}
+		{/*			</div>*/}
+		{/*		</div>*/}
+		{/*	</div>*/}
+
+		{/*</div>*/}
+
+			<ServerSideRender
+				block={ metadata.name }
+				skipBlockSupportAttributes
+				attributes={ attributes }
+			/>
 		</div>
 	);
 }
